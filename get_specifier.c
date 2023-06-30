@@ -22,8 +22,8 @@ int (*get_specifier(char s))(va_list)
 
 	for (int i = 0; specifier[i].type != NULL; i++)
 	{
-		if (*(specifiers[i].type) == s)
-			return (specifiers[i].f);
+		if (*(specifier[i].type) == s)
+			return (specifier[i].f);
 	}
 	return (NULL);
 }
