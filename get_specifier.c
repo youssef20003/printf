@@ -7,7 +7,7 @@
 */
 int (*get_specifier(char s))(va_list)
 {
-	specifier_t specifiers[] = {
+	specifier_t specifier[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"b", print_binary},
@@ -19,9 +19,8 @@ int (*get_specifier(char s))(va_list)
 		{"X", print_HEX},
 		{NULL, NULL}
 	};
-	int i;
 
-	for (i = 0; specifiers[i].type != NULL; i++)
+	for (int i = 0; specifier[i].type != NULL; i++)
 	{
 		if (*(specifiers[i].type) == s)
 			return (specifiers[i].f);
